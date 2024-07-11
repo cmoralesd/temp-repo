@@ -40,7 +40,8 @@ El detalle de la instalación puede encontrarse en el tutorial oficial: https://
 Los siguientes aplicaciones y componentes serán requeridos para que todo funcione.  
     `sudo apt install mesa-utils`  
     `sudo apt install python3-pip`  
-    `sudo apt install jstest-gtk`  
+    `sudo apt install jstest-gtk
+    `sudo apt install ros-joy*`  
     `sudo apt install ros-jazzy-joint-state-publisher`  
     `sudo apt install ros-jazzy-joint-state-publisher-gui`  
     `sudo apt install ros-jazzy-ros2-control `  
