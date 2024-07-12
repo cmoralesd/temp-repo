@@ -1,21 +1,35 @@
 # ros2-test-repo
 
-Este repositorio presenta los primeros pasos para trabajar con ROS2 Jazzy. La explicación del paso a paso puedes encontrarla en la siguiente los siguientes videos de youtube.
+Este repositorio presenta los primeros pasos para trabajar con ROS2 Jazzy. La explicación del paso a paso puedes encontrarla en la siguiente los siguientes videos de youtube:   
+1. Configurando el setup para que todo funcione
+2. Primeros pasos en ROS2
 
 ## Preparativos
-La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación.
+La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación.   
+Existen 3 opciones para esto, pudiéndose utilizar cualquiera de ellas:
 
-Descargar Ubuntu 24.04 LTS Desktop desde este enlace: https://ubuntu.com/download/desktop
+### 1. Instalar Ubuntu 24.04 LTS Desktop en forma nativa en el computador (recomendado para máximo rendimiento)
+La instalación de Ubuntu puede compartir el disco duro con Windows y seleccionar el sistema operativo al momento del inicio.   
+Es la configuración que aprovecha de mejor manera los recursos del computador, especialmente la tarjeta gráfica, y es la recomendada para desarrollo.
+Este enlace describe en detalle cómo realizar el procedimiento: https://www.softzone.es/windows/como-se-hace/ubuntu-windows-dual-boot/
+
+### 2. Instalar Ubuntu 24.04 en una máquina virtual (recomendado para el periodo de aprendizaje)
+Una máquina virtual es un entorno seguro para familiarizarse con Linux y ROS2 sin tener que hacer cambios en el computador.   
+Dependiendo de los recursos (RAM y número de procesadores destinados a la máquina virtual), el rendimiento puede ser suficientemente bueno, incluso para simulaciones complejas con GazeboSim.
+El procedimiento en detalle sobre la creación de una máquina virtual en VMWare Workstation y la instalación de Ubuntu 24.04 puede encontrarse en este video:
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
+Los archivos de una máquina virtual ya creada y lista para usarse, incluyendo ROS2 instalado, pueden encontrarse aquí:
+XXXXXXXXXXXXXXXXXXXXX   
 
 Para quienes comienzan a familiarizarse con Linux y ROS2, recomendamos utilizar una máquina virtual. En nuestro caso, utilizaremos VMWare (link de descarga: https://www.techspot.com/downloads/189-vmware-workstation-for-windows.html). 
 
-El siguiente video muestra la instalación recomendada de Ubuntu 24.04: 
+### 3. En Windows, utilizando WSL (Windows Subsystem for Lunux)
+Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero manteniendo la simulación en un software externo, como puede ser Webots.
 
-1. Crear la máquina. Asignar recursos.  
-2. Instalar Ubuntu. Configuración recomendada user@ubuntu  
 
 ## 1. Instalar ROS2 Jazzy
-El detalle de la instalación puede encontrarse en el tutorial oficial: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html  
+El detalle de la instalación puede encontrarse en el tutorial oficial: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debians.html   
+*El procedimiento siguiente es idéntico para instalar ROS en una instalación nativa de Ubuntu 24.04, en una máquina virtual o por medio de WSL*.   
 1. Añadir el componente 'universe' a todos los repositorios 
 `sudo add-apt-repository universe`  
 
@@ -87,6 +101,6 @@ Agregar la siguiente instrucción al final del archivo *~/.bashrc*
 
 ## 5. Otras configuraciones útiles
 Al compilar los repositorios de ROS2 mediante `colcon build --symlink-install`, aparece un molesto aviso de librerías que van a quedar obsoletas (deprecation warning). Este es sólo un mensaje de alerta (warning) y no afecta la funcionalidad. Para no visualizar este mensaje, incluir las siguientes líneas al final del archivo `~/.bashrc`:  
-    `PYTHONWARNINGS=ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::setuptools.command.develop`
+    `PYTHONWARNINGS=ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::setuptools.command.develop`   
     `export PYTHONWARNINGS`
 
