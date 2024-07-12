@@ -23,8 +23,13 @@ XXXXXXXXXXXXXXXXXXXXX
 
 Para quienes comienzan a familiarizarse con Linux y ROS2, recomendamos utilizar una máquina virtual. En nuestro caso, utilizaremos VMWare (link de descarga: https://www.techspot.com/downloads/189-vmware-workstation-for-windows.html). 
 
-### 3. En Windows, utilizando WSL (Windows Subsystem for Lunux)
+### 3. En Windows, utilizando WSL (Windows Subsystem for Linux)
 Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero manteniendo la simulación en un software externo, como puede ser Webots.
+
+### 4. Utilizando un contenedor de Docker
+Este método es especialmente útil para utilizar ROS Jazzy en sistemas linux distintos de Ubuntu 24.04.
+El archivo dockerfile de este repositorio han sido probados en Raspberry Pi 4 utilizando Raspbian y en NVidia Jetson Nano con Jetpack 4.   
+Un video sobre la configuración de ROS2 Jazzy utilizando Docker se encuentra en este video.
 
 
 ## 1. Instalar ROS2 Jazzy
