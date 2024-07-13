@@ -1,35 +1,24 @@
-# ros2-test-repo
+# Instalando ROS2 Jazzy en Ubuntu 24.04
 
-Este repositorio presenta los primeros pasos para trabajar con ROS2 Jazzy. La explicación del paso a paso puedes encontrarla en la siguiente los siguientes videos de youtube:   
-1. Configurando el setup para que todo funcione
-2. Primeros pasos en ROS2
+Revisa un video con las instrucciones de este tutorial aquí:   
+Si prefieres utilizar ROS2 Jazzy en un contenedor Docker, revisa aquí:   
 
 ## Preparativos
-La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación.   
-Existen 3 opciones para esto, pudiéndose utilizar cualquiera de ellas:
+La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación. Existen 3 opciones para esto:
 
 ### 1. Instalar Ubuntu 24.04 LTS Desktop en forma nativa en el computador (recomendado para máximo rendimiento)
-La instalación de Ubuntu puede compartir el disco duro con Windows y seleccionar el sistema operativo al momento del inicio.   
-Es la configuración que aprovecha de mejor manera los recursos del computador, especialmente la tarjeta gráfica, y es la recomendada para desarrollo.
-Este enlace describe en detalle cómo realizar el procedimiento: https://www.softzone.es/windows/como-se-hace/ubuntu-windows-dual-boot/
+La instalación de Ubuntu puede compartir el disco duro con Windows, mediante *dual boot*.   Con este método, al encender el computador es posible elegir si se trabajará con Ubuntu o con Windows.      
+Esta es la configuración que aprovecha de mejor manera los recursos del computador, especialmente la tarjeta gráfica, y es la recomendada para desarrollo.
+Este enlace describe en detalle cómo realizar el procedimiento de instalación: https://www.softzone.es/windows/como-se-hace/ubuntu-windows-dual-boot/
 
 ### 2. Instalar Ubuntu 24.04 en una máquina virtual (recomendado para el periodo de aprendizaje)
 Una máquina virtual es un entorno seguro para familiarizarse con Linux y ROS2 sin tener que hacer cambios en el computador.   
-Dependiendo de los recursos (RAM y número de procesadores destinados a la máquina virtual), el rendimiento puede ser suficientemente bueno, incluso para simulaciones complejas con GazeboSim.
+Dependiendo de los recursos (memoria RAM y número de procesadores que pueden destinarse a la máquina virtual), el rendimiento puede ser suficientemente bueno, incluso para simulaciones con GazeboSim.
 El procedimiento en detalle sobre la creación de una máquina virtual en VMWare Workstation y la instalación de Ubuntu 24.04 puede encontrarse en este video:
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
-Los archivos de una máquina virtual ya creada y lista para usarse, incluyendo ROS2 instalado, pueden encontrarse aquí:
-XXXXXXXXXXXXXXXXXXXXX   
-
-Para quienes comienzan a familiarizarse con Linux y ROS2, recomendamos utilizar una máquina virtual. En nuestro caso, utilizaremos VMWare (link de descarga: https://www.techspot.com/downloads/189-vmware-workstation-for-windows.html). 
 
 ### 3. En Windows, utilizando WSL (Windows Subsystem for Linux)
-Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero manteniendo la simulación en un software externo, como puede ser Webots.
-
-### 4. Utilizando un contenedor de Docker
-Este método es especialmente útil para utilizar ROS Jazzy en sistemas linux distintos de Ubuntu 24.04.
-El archivo dockerfile de este repositorio han sido probados en Raspberry Pi 4 utilizando Raspbian y en NVidia Jetson Nano con Jetpack 4.   
-Un video sobre la configuración de ROS2 Jazzy utilizando Docker se encuentra en este video.
+Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero para simulaciones fluidas puede ser necesario utilizar un software externo, como Webots.   
 
 
 ## 1. Instalar ROS2 Jazzy
@@ -56,7 +45,7 @@ El detalle de la instalación puede encontrarse en el tutorial oficial: https://
 `source /opt/ros/jazzy/setup.bash`  
 
 ## 2. Otras instalaciones requeridas
-Los siguientes aplicaciones y componentes serán requeridos para que todo funcione.  
+Utilizar los siguientes comandos para instalar paquetes adicionales, requeridos para que todo funcione.  
     `sudo apt install mesa-utils`  
     `sudo apt install python3-pip`  
     `sudo apt install jstest-gtk`   
