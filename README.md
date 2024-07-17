@@ -1,10 +1,10 @@
 # Instalando ROS2 Jazzy en Ubuntu 24.04
 
-Revisa un video con las instrucciones de este tutorial aquí:   
+Revisa un video con las instrucciones completas de este tutorial aquí:   
 Si prefieres utilizar ROS2 Jazzy en un contenedor Docker, revisa aquí:   
 
 ## Preparativos
-La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación. Existen 3 opciones para esto:
+La instalación de ROS2 Jazzy requiere de Ubuntu 24.04 LTS, por lo cual comenzaremos con esta instalación. Existen 4 opciones comunmente utilizadas para esto:
 
 ### 1. Instalar Ubuntu 24.04 LTS Desktop en forma nativa en el computador (recomendado para máximo rendimiento)
 La instalación de Ubuntu puede compartir el disco duro con Windows, mediante *dual boot*.   Con este método, al encender el computador es posible elegir si se trabajará con Ubuntu o con Windows.      
@@ -14,11 +14,12 @@ Este enlace describe en detalle cómo realizar el procedimiento de instalación:
 ### 2. Instalar Ubuntu 24.04 en una máquina virtual (recomendado para el periodo de aprendizaje)
 Una máquina virtual es un entorno seguro para familiarizarse con Linux y ROS2 sin tener que hacer cambios en el computador.   
 Dependiendo de los recursos (memoria RAM y número de procesadores que pueden destinarse a la máquina virtual), el rendimiento puede ser suficientemente bueno, incluso para simulaciones con GazeboSim.
-El procedimiento en detalle sobre la creación de una máquina virtual en VMWare Workstation y la instalación de Ubuntu 24.04 puede encontrarse en este video:
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
 
 ### 3. En Windows, utilizando WSL (Windows Subsystem for Linux)
 Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero para simulaciones fluidas puede ser necesario utilizar un software externo, como Webots, en lugar de utilizar GazeboSim.   
+
+### 4. En un contenedor Docker
+Este método permite ejecutar ROS2 Jazzy en equipos con un sistema Linux distinto de Ubuntu 24.04. Es el método que deberá utilizrse para trabajar con ROS2 Jazzy en computadoras de placa reducida, tales como Raspberry Pi o Jetson Nano. Las indicaciones para trabajar en Docker no están contenidas en este tutorial.
 
 
 ## 1. Instalar ROS2 Jazzy
