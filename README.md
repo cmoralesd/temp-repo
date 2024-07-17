@@ -18,7 +18,7 @@ El procedimiento en detalle sobre la creación de una máquina virtual en VMWare
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
 
 ### 3. En Windows, utilizando WSL (Windows Subsystem for Linux)
-Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero para simulaciones fluidas puede ser necesario utilizar un software externo, como Webots.   
+Este método facilita la utilización de software de Linux en un entorno Windows. Su desempeño es bastante bueno, excepto para la utilización de simulaciones en GazeboSim. Es una configuración adecuada para las tareas de control y monitoreo utilizando ROS2, pero para simulaciones fluidas puede ser necesario utilizar un software externo, como Webots, en lugar de utilizar GazeboSim.   
 
 
 ## 1. Instalar ROS2 Jazzy
@@ -60,9 +60,9 @@ Utilizar los siguientes comandos para instalar paquetes adicionales, requeridos 
     `sudo apt install ros-jazzy-nav2-bringup`  
 
 ## 3. Configurar video para RVIZ y GazeboSim
-Si las opciones de video por defecto en Ubuntu 24.04 no permiten la ejecución de RVIZ y/o GazeboSim, realizar las siguientes configuraciones:  
+La instalación de ROS2 Jazzy en Ubuntu 24.04 puede arrojar problemas con los componentes que requieren interfaz gráfica y renderización 3D, tales como RVIS2 y GazeboSim.    Si las opciones de video por defecto en Ubuntu 24.04 no permiten la ejecución de RVIZ2 y/o GazeboSim, realizar las siguientes configuraciones:  
 ### Cambiar la interfaz gráfica *wayland* por *X11*  
-(https://robotics.stackexchange.com/questions/111436/rviz2-is-not-working-in-ros2-jazzy)  
+(Siguiendo la solución propuesta en https://robotics.stackexchange.com/questions/111436/rviz2-is-not-working-in-ros2-jazzy)  
 1. Verificar el sistema de gestión de ventanas gráficas, ejecutando:   
     `echo $XDG_SESSION_TYPE`   
    Si la salida es *wayland*, entonces instalar X11 con:   
@@ -74,7 +74,7 @@ Si las opciones de video por defecto en Ubuntu 24.04 no permiten la ejecución d
 4. Reiniciar
 
 ### Instalar la última versión de MESA driver
-(https://itsfoss.com/install-mesa-ubuntu/)
+(Siguiendo la solución propuesta en https://itsfoss.com/install-mesa-ubuntu/)
 1. Agregar el repositorio de MESA driver a las fuentes de software:   
    `sudo add-apt-repository ppa:kisak/kisak-mesa`
 2. Actualizar la lista de repositorios y realizar una actualización de software   
@@ -83,18 +83,18 @@ Si las opciones de video por defecto en Ubuntu 24.04 no permiten la ejecución d
 3. Ejecutar `glxinfo | grep OpenGL` y verificar que no hay errores.
 
 ### Deshabilitar LibGL_DRI3
-(https://gazebosim.org/docs/garden/troubleshooting#ubuntu)  
+(Siguiendo la solución propuesta en https://gazebosim.org/docs/garden/troubleshooting#ubuntu)  
 Agregar la siguiente instrucción al final del archivo *~/.bashrc*    
         `export LIBGL_DRI3_DISABLE=1`
 
 ## 4. Instalar Visual Studio Code
 1. Descargar archivo .deb desde https://code.visualstudio.com/download  
 2. Abrir terminal en carpeta descargas y ejecutar   
-       `sudo apt install ./code<version>.deb`
-4. En code, instalar extensiones: *Python* (by Microsoft), *ROS* (by Microsoft)
+       `sudo apt install ./code_<version>.deb`
+4. Una vez abierto VSCode, instalar extensiones: *Python* (by Microsoft), *ROS* (by Microsoft)
 
 ## 5. Otras configuraciones útiles
-Al compilar los repositorios de ROS2 mediante `colcon build --symlink-install`, aparece un molesto aviso de librerías que van a quedar obsoletas (deprecation warning). Este es sólo un mensaje de alerta (warning) y no afecta la funcionalidad. Para no visualizar este mensaje, incluir las siguientes líneas al final del archivo `~/.bashrc`:  
+Al compilar los repositorios de ROS2 utilizando `colcon build --symlink-install`, aparece una molesta advertencia de librerías obsoletas (deprecation warning). Este es sólo un mensaje de alerta (warning) y no afecta la funcionalidad. Sin embargo, si se desea dejar de visualizar este mensaje, incluir las siguientes líneas al final del archivo `~/.bashrc`:  
     `PYTHONWARNINGS=ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::setuptools.command.develop`   
     `export PYTHONWARNINGS`
 
