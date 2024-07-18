@@ -5,8 +5,8 @@ Para una explicación detallada del proceso seguido en este tutorial, revisa est
 Abre un terminal nuevo, desde la carpeta de usuario `~$` y crea una carpeta para contener el espacio de trabajo (workspace):   
       `mkdir my_ws`   
 Entra a la carpeta recién creada:   
-      `cd my_ws` 
-Dentro de la carpeta recién creada, crea una subcarpeta que alojará el código fuente (source code):   
+      `cd my_ws`   
+Crea allí una subcarpeta *src* que alojará el código fuente (source code):   
       `mkdir src`   
 Compila el espacio de trabajo utilizando *colcon*:   
       `colcon build`  
