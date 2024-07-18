@@ -55,6 +55,71 @@ En caso que el nodo no se inicie correctamente:
 1. Asegúrate que has agregado el espacio de trabajo como fuente de software: `source install/setup.bash`
 2. Elimina las carpetas *build*, *install* y *log* desde el espacio de trabajo. Vuelve a compilar y nuevamente `source install/setup.bash`
 
+Sigue editando para dar a *my_node* la funcionalidad de un mensaje repetitivo, siguiendo la estructura típica de un nodo de Python. Esta estructura nos servirá como plantilla para los futuros nodos que vamos a crear.   
+```
+import rclpy
+from rclpy.node import Node
 
+class MyNode(Node):
+    def __init__(self):
+        super().__init__('my_node')
+        timer_period = 0.5 #sec
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+    
+    def timer_callback(self):
+        print('hello from ROS2!')
+
+def main(args=None):
+    try: 
+        rclpy.init(args=args)
+        my_node = MyNode()
+        rclpy.spin(my_node)
+
+    except KeyboardInterrupt:
+        print(' ... exit node')
+    except Exception as e:
+        print(e)
+
+if __name__ == '__main__':
+    main()
+```
+
+## 4. Crea un nodo publicador
+El nodo de ejemplo *my_node* simplemente muestra un saludo por consola. Crearemos ahora un nodo que pueda transmitir un mensaje que podrá ser recibido por otros nodos de ROS2, sea que éste se aloje en el mismo equipo o en otro equipo conectado a la misma red.   
+Tomando como ejemplo la estructura de nodo de *my_node*, agrega las líneas de código necesarias para incluir un publicador y un registo de evento en el log.   
+```
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+class MyPublisher(Node):
+    def __init__(self):
+        super().__init__('my_publisher')
+        self.publisher = self.create_publisher(String, 'my_topic', 10)
+        timer_period = 0.5 #sec
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.i = 0
+
+    def timer_callback(self):
+        msg = String()
+        msg.data = "message # %d" %self.i
+        self.publisher.publish(msg)
+        self.get_logger().info("Publishing: '%s" % msg.data)
+        self.i += 1
+
+def main(args=None):
+    try: 
+        rclpy.init(args=args)
+        pub = MyPublisher()
+        rclpy.spin(pub)
+
+    except KeyboardInterrupt:
+        print(' ... exit node')
+    except Exception as e:
+        print(e)
+
+if __name__ == '__main__':
+    main()
+```
 
       
