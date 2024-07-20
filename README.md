@@ -71,7 +71,7 @@ La instalación de ROS2 Jazzy en Ubuntu 24.04 puede arrojar problemas con los co
 3. Editar el archivo *custom.conf*, utilizando *nano*:   
      `sudo nano /etc/gdm3/custom.conf`   
    Habilitar la línea "WaylandEnable=false", quitando el caracter de comentario '#'.   
-   Guardar con `<control + s>` y salir con `<control + o>`.
+   Guardar con `<control + o>` y salir con `<control + x>`.
 4. Reiniciar
 
 ### Instalar la última versión de MESA driver
