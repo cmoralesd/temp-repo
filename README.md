@@ -95,7 +95,7 @@ Agregar la siguiente instrucción al final del archivo *~/.bashrc*
 4. Una vez abierto VSCode, instalar extensiones: *Python* (by Microsoft), *ROS* (by Microsoft)
 
 ## 5. Otras configuraciones útiles
-Al compilar los repositorios de ROS2 utilizando `colcon build --symlink-install`, aparece una molesta advertencia de librerías obsoletas (deprecation warning). Este es sólo un mensaje de alerta (warning) y no afecta la funcionalidad. Sin embargo, si se desea dejar de visualizar este mensaje, incluir las siguientes líneas al final del archivo `~/.bashrc`:  
+Al compilar los repositorios de ROS2 utilizando `colcon build --symlink-install`, aparece una molesta advertencia de librerías obsoletas (deprecation warning). Este es sólo un mensaje de alerta (warning) y no afecta la funcionalidad. Sin embargo, si se desea dejar de visualizar este mensaje, incluir las siguientes líneas al final del archivo *~/.bashrc*:   
     `PYTHONWARNINGS=ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::setuptools.command.develop`   
     `export PYTHONWARNINGS`
 
