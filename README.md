@@ -42,7 +42,7 @@ El detalle de la instalación puede encontrarse en el tutorial oficial: https://
 `sudo apt upgrade`  
 `sudo apt install ros-jazzy-desktop`  
 
-6. Habilitar ros-jazzy como fuente de software en todos los terminales, agregando la siguiente instrucción al archivo *~/.bashrc*:
+6. Habilitar ros-jazzy como fuente de software en todos los terminales, agregando la siguiente instrucción al archivo *~/.bashrc*:   
 `source /opt/ros/jazzy/setup.bash`  
 
 ## 2. Otras instalaciones requeridas
