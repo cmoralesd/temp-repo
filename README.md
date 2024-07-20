@@ -79,8 +79,8 @@ La instalación de ROS2 Jazzy en Ubuntu 24.04 puede arrojar problemas con los co
 1. Agregar el repositorio de MESA driver a las fuentes de software:   
    `sudo add-apt-repository ppa:kisak/kisak-mesa`
 2. Actualizar la lista de repositorios y realizar una actualización de software   
-   `sudo apt get update`  
-   `sudo apt get upgrade`  
+   `sudo apt update`  
+   `sudo apt upgrade`  
 3. Ejecutar `glxinfo | grep OpenGL` y verificar que no hay errores.
 
 ### Deshabilitar LibGL_DRI3
